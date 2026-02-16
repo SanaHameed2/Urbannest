@@ -1,4 +1,6 @@
-// mobile nav toggle
-document.querySelector(".nav-toggle")?.addEventListener("click", function () {
-  document.querySelector(".nav-actions").classList.toggle("active");
+const toggle = document.querySelector(".nav-toggle");
+const nav = document.querySelector(".nav-actions");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
 });
