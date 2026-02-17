@@ -1,8 +1,12 @@
 :root {
   --amazon-dark: #131921;
   --amazon-light: #232f3e;
-  --accent: #febd69;
-  --bg: #f3f3f3;
+  --primary-soft: #6C8FA3;
+  --primary-soft-dark: #4F6E7D;
+  --accent: #B07A4F;
+  --accent-light: #D9CBBE;
+  --bg: #EFEDE8;
+  --white: #ffffff;
 }
 
 /* RESET */
@@ -21,6 +25,7 @@ body {
   background: var(--bg);
   font-size: 16px;
   line-height: 1.6;
+  color: #2F2F36;
 }
 
 img {
@@ -32,6 +37,8 @@ img {
 button {
   min-height: 44px;
   cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s ease;
 }
 
 /* Containers */
@@ -101,12 +108,14 @@ button {
   flex: 1;
   padding: 10px;
   border: none;
+  outline: none;
 }
 
 .search button {
   background: var(--accent);
   border: none;
   padding: 10px 14px;
+  color: white;
 }
 
 .nav-actions {
@@ -148,8 +157,8 @@ button {
 
 /* PROMO BANNER */
 .promo-banner {
-  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-  color: white;
+  background: var(--accent-light);
+  color: #2F2F36;
   text-align: center;
   padding: 18px 0;
 }
@@ -160,13 +169,17 @@ button {
 }
 
 .promo-banner .highlight {
-  color: #ffd700;
+  color: var(--accent);
   font-weight: 700;
 }
 
 /* HERO */
 .hero {
-  background: url("assets/images/watch.png") no-repeat center/cover;
+  background: linear-gradient(
+      rgba(108,143,163,0.85),
+      rgba(108,143,163,0.85)
+    ),
+    url("assets/images/watch.png") no-repeat center/cover;
   color: white;
   padding: clamp(60px, 10vw, 100px) 0;
   text-align: center;
@@ -187,6 +200,7 @@ button {
   border: none;
   padding: 12px 20px;
   font-weight: 500;
+  color: white;
 }
 
 /* SECTION */
@@ -209,10 +223,25 @@ button {
   background: white;
   padding: 20px;
   text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border-radius: 8px;
 }
 
 .price {
-  color: #b12704;
+  color: var(--accent);
   font-weight: bold;
   margin-top: 8px;
 }
@@ -233,6 +262,7 @@ button {
   color: white;
   padding: 30px;
   text-align: center;
+  border-radius: 12px;
 }
 
 /* FOOTER */
