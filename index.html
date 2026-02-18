@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>UrbanNest Mart</title>
+
     <link rel="stylesheet" href="style.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
+
     <!-- TOP UTILITY BAR -->
     <div class="topbar">
       <div class="container topbar-inner">
@@ -27,39 +30,41 @@
     <!-- MAIN NAVBAR -->
     <header class="navbar">
       <div class="container navbar-inner">
+
         <div class="logo">UrbanNest</div>
 
         <button class="nav-toggle">☰</button>
 
         <div class="search">
           <input type="text" placeholder="Search groceries, home & more" />
-          <button>Search</button>
+          <button type="button">Search</button>
         </div>
 
         <div class="nav-actions">
           <a href="#">Sign In</a>
           <a href="#">My Orders</a>
-          <a href="#">Cart</a>
+          <a href="#">
+            Cart (<span id="cartCount">0</span>)
+          </a>
         </div>
+
       </div>
     </header>
 
     <!-- CATEGORY STRIP -->
     <div class="category-strip">
       <div class="container categories">
-        <a href="#">All</a>
-        <a href="#">Fresh Vegetables</a>
-        <a href="#">Fruits</a>
-        <a href="#">Dairy & Bakery</a>
-        <a href="#">Home Essentials</a>
-        <a href="#">Kitchenware</a>
-        <a href="#">Personal Care</a>
-        <a href="#">Kids & Baby</a>
-        <a href="#">Snacks & Beverages</a>
+        <a href="#" onclick="filterProductsByCategory('all')">All</a>
+        <a href="#" onclick="filterProductsByCategory('vegetables')">Fresh Vegetables</a>
+        <a href="#" onclick="filterProductsByCategory('fruits')">Fruits</a>
+        <a href="#" onclick="filterProductsByCategory('dairy')">Dairy & Bakery</a>
+        <a href="#" onclick="filterProductsByCategory('home')">Home Essentials</a>
+        <a href="#" onclick="filterProductsByCategory('kitchen')">Kitchenware</a>
+        <a href="#" onclick="filterProductsByCategory('personal')">Personal Care</a>
       </div>
     </div>
 
-    <!-- RAMADAN SALE BANNER -->
+    <!-- PROMO BANNER -->
     <section class="promo-banner">
       <div class="container">
         <h2>
@@ -70,53 +75,53 @@
       </div>
     </section>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container hero-content">
         <div class="hero-text">
           <h1>Fresh Deals for Everyday Living</h1>
           <p>Up to 50% Off on Groceries & Home Essentials</p>
-          <button>Shop Now</button>
+          <button type="button">Shop Now</button>
         </div>
       </div>
     </section>
 
-    <!-- PRODUCT SECTION -->
+    <!-- TODAY'S BEST PICKS -->
     <section class="section">
       <div class="container">
-        <h2>Today's Best Picks</h2>
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="assets/images/Tomatoes Image.jpg" alt="" />
-            <h3>Organic Tomatoes (1kg)</h3>
-            <p class="price">RS.45</p>
-          </div>
-
-          <div class="product-card">
-            <img src="assets/images/milkpack" alt="" />
-            <h3>Fresh Milk (1L)</h3>
-            <p class="price">RS.58</p>
-          </div>
-
-          <div class="product-card">
-            <img src="assets/images/rice.jpg" alt="" />
-            <h3>Premium Basmati Rice (5kg)</h3>
-            <p class="price">RS.499</p>
-          </div>
-
-          <div class="product-card">
-            <img src="assets/images/set.jpg" alt="" />
-            <h3>Kitchen Storage Set</h3>
-            <p class="price">RS.799</p>
-          </div>
+        <div class="section-header">
+          <h2>Today's Best Picks</h2>
         </div>
+        <div class="product-grid" id="productGrid"></div>
       </div>
     </section>
 
-    <!-- BRANDS -->
+    <!-- LIMITED TIME DEALS -->
     <section class="section light-bg">
       <div class="container">
-        <h2>Trusted Brands</h2>
+        <div class="section-header">
+          <h2>Limited Time Deals</h2>
+        </div>
+        <div class="product-grid" id="dealsGrid"></div>
+      </div>
+    </section>
+
+    <!-- TRENDING PRODUCTS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trending Products</h2>
+        </div>
+        <div class="product-grid" id="trendingGrid"></div>
+      </div>
+    </section>
+
+    <!-- TRUSTED BRANDS -->
+    <section class="section light-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trusted Brands</h2>
+        </div>
         <div class="brand-grid">
           <div class="brand-card">OK</div>
           <div class="brand-card">FALAK</div>
@@ -126,30 +131,51 @@
       </div>
     </section>
 
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <h2>Subscribe for Updates & Offers</h2>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-grid">
+
         <div>
           <h4>About UrbanNest</h4>
           <a href="#">Our Story</a>
           <a href="#">Careers</a>
           <a href="#">Sustainability</a>
         </div>
+
         <div>
           <h4>Customer Support</h4>
           <a href="#">Returns</a>
           <a href="#">Shipping Info</a>
           <a href="#">Help Center</a>
         </div>
+
         <div>
           <h4>Partner With Us</h4>
           <a href="#">Sell on UrbanNest</a>
           <a href="#">Affiliate Program</a>
         </div>
+
       </div>
-      <p class="copyright">© 2026 UrbanNest Mart. All Rights Reserved.</p>
+
+      <p class="copyright">
+        © 2026 UrbanNest Mart. All Rights Reserved.
+      </p>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- SCRIPTS -->
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+
   </body>
 </html>

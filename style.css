@@ -7,6 +7,7 @@
   --accent-light: #D9CBBE;
   --bg: #EFEDE8;
   --white: #ffffff;
+  --text-dark: #2F2F36;
 }
 
 /* RESET */
@@ -25,7 +26,7 @@ body {
   background: var(--bg);
   font-size: 16px;
   line-height: 1.6;
-  color: #2F2F36;
+  color: var(--text-dark);
 }
 
 img {
@@ -38,7 +39,8 @@ button {
   min-height: 44px;
   cursor: pointer;
   border-radius: 6px;
-  transition: 0.3s ease;
+  transition: all 0.25s ease;
+  border: none;
 }
 
 /* Containers */
@@ -73,7 +75,7 @@ button {
 .navbar {
   background: var(--amazon-dark);
   color: white;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .navbar-inner {
@@ -85,7 +87,7 @@ button {
 
 .logo {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   white-space: nowrap;
 }
 
@@ -106,16 +108,21 @@ button {
 
 .search input {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border: none;
   outline: none;
+  border-radius: 6px 0 0 6px;
 }
 
 .search button {
   background: var(--accent);
-  border: none;
-  padding: 10px 14px;
+  padding: 12px 18px;
   color: white;
+  border-radius: 0 6px 6px 0;
+}
+
+.search button:hover {
+  background: var(--primary-soft-dark);
 }
 
 .nav-actions {
@@ -130,12 +137,22 @@ button {
   min-height: 44px;
   display: flex;
   align-items: center;
+  font-weight: 500;
+}
+
+#cartCount {
+  background: var(--accent);
+  color: white;
+  font-size: 0.75rem;
+  padding: 3px 7px;
+  border-radius: 20px;
+  margin-left: 6px;
 }
 
 /* CATEGORY STRIP */
 .category-strip {
   background: var(--amazon-light);
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .categories {
@@ -153,14 +170,21 @@ button {
   color: white;
   text-decoration: none;
   white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.categories a:hover {
+  background: rgba(255,255,255,0.15);
 }
 
 /* PROMO BANNER */
 .promo-banner {
   background: var(--accent-light);
-  color: #2F2F36;
+  color: var(--text-dark);
   text-align: center;
-  padding: 18px 0;
+  padding: 20px 0;
 }
 
 .promo-banner h2 {
@@ -176,74 +200,114 @@ button {
 /* HERO */
 .hero {
   background: linear-gradient(
-      rgba(108,143,163,0.85),
-      rgba(108,143,163,0.85)
+      rgba(108,143,163,0.88),
+      rgba(108,143,163,0.88)
     ),
     url("assets/images/watch.png") no-repeat center/cover;
   color: white;
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(80px, 12vw, 120px) 0;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.5rem);
-  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 15px;
 }
 
 .hero p {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .hero button {
   background: var(--accent);
-  border: none;
-  padding: 12px 20px;
-  font-weight: 500;
-  color: white;
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.hero button:hover {
+  background: var(--primary-soft-dark);
+  transform: translateY(-2px);
 }
 
 /* SECTION */
 .section {
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 /* PRODUCTS */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
 }
 
 .product-card {
   background: white;
-  padding: 20px;
+  padding: 22px;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
 }
 
 .product-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  margin-bottom: 12px;
-  border-radius: 8px;
+  margin-bottom: 16px;
 }
 
 .price {
   color: var(--accent);
   font-weight: bold;
-  margin-top: 8px;
+  margin-top: 6px;
+}
+
+.add-to-cart {
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  margin-top: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.add-to-cart:hover {
+  background: var(--primary-soft-dark);
+  transform: translateY(-2px);
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+}
+
+.deal {
+  background: #e74c3c;
+}
+
+.trending {
+  background: #f39c12;
 }
 
 /* BRANDS */
@@ -253,23 +317,62 @@ button {
 
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
 }
 
 .brand-card {
   background: var(--amazon-dark);
   color: white;
-  padding: 30px;
+  padding: 35px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 14px;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+}
+
+/* NEWSLETTER */
+.newsletter {
+  background: var(--accent-light);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.newsletter-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: none;
+  width: 260px;
+}
+
+.newsletter-form button {
+  background: var(--accent);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+}
+
+.newsletter-form button:hover {
+  background: var(--primary-soft-dark);
 }
 
 /* FOOTER */
 .footer {
   background: var(--amazon-dark);
   color: white;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 .footer-grid {
@@ -283,6 +386,11 @@ button {
   color: #ddd;
   margin-top: 8px;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: white;
 }
 
 .copyright {
@@ -329,7 +437,11 @@ button {
     gap: 5px;
   }
 
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .section {
-    padding: 30px 0;
+    padding: 40px 0;
   }
 }
