@@ -1,31 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const grid = document.getElementById("productGrid");
+  const mainGrid = document.getElementById("productGrid");
+  const dealsGrid = document.getElementById("dealsGrid");
+  const trendingGrid = document.getElementById("trendingGrid");
 
-  if (!grid) return; 
+  function createCard(product, badgeText = "", badgeClass = "") {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+    card.innerHTML = `
+      ${badgeText ? `<span class="badge ${badgeClass}">${badgeText}</span>` : ""}
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p class="price">RS.${product.price}</p>
+      <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+    `;
+    return card;
+  }
 
-  // Function to render products
-  function renderProducts(productsToRender) {
-    grid.innerHTML = ""; 
+  function renderProducts(productsToRender, targetGrid, badgeText = "", badgeClass = "") {
+    targetGrid.innerHTML = "";
     productsToRender.forEach(product => {
-      const card = document.createElement("div");
-      card.classList.add("product-card");
-
-      card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p class="price">RS.${product.price}</p>
-        <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-      `;
-
-      grid.appendChild(card);
+      targetGrid.appendChild(createCard(product, badgeText, badgeClass));
     });
   }
 
-  // Initial render (all products)
-  renderProducts(products);
+  renderProducts(products, mainGrid);
 
-  // Placeholder: handle Add to Cart clicks
-  grid.addEventListener("click", function(e) {
+  const deals = products.slice(0, 4);
+  renderProducts(deals, dealsGrid, "Deal", "deal");
+
+  const trending = products.filter(p => p.isTrending);
+  renderProducts(trending, trendingGrid, "Trending", "trending");
+
+  document.addEventListener("click", function (e) {
     if (e.target.classList.contains("add-to-cart")) {
       const id = e.target.dataset.id;
       const selectedProduct = products.find(p => p.id == id);
@@ -33,13 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Optional filter 
-  window.filterProductsByCategory = function(category) {
+  window.filterProductsByCategory = function (category) {
     if (category === "all") {
-      renderProducts(products);
+      renderProducts(products, mainGrid);
     } else {
       const filtered = products.filter(p => p.category === category);
-      renderProducts(filtered);
+      renderProducts(filtered, mainGrid);
     }
   };
 });
