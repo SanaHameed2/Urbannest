@@ -31,13 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const trending = products.filter(p => p.isTrending);
   renderProducts(trending, trendingGrid, "Trending", "trending");
 
-  document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("add-to-cart")) {
-      const id = e.target.dataset.id;
-      const selectedProduct = products.find(p => p.id == id);
-      console.log("Add to cart:", selectedProduct);
-    }
-  });
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("add-to-cart")) {
+    const id = e.target.dataset.id;
+    const selectedProduct = products.find(p => p.id == id);
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push(selectedProduct);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Product added to cart");
+  }
+});
 
   window.filterProductsByCategory = function (category) {
     if (category === "all") {
