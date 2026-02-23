@@ -1,46 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+  // ======== ELEMENT REFERENCES ========
   const cartItemsContainer = document.getElementById("cartItems");
   const cartTotal = document.getElementById("cartTotal");
   const cartCount = document.getElementById("cartCount");
+  const clearCartBtn = document.getElementById("clearCartBtn");
+  const checkoutBtn = document.getElementById("checkoutBtn");
 
+  // ======== LOAD CART FROM LOCALSTORAGE ========
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  /* ===============================
-     UPDATE NAVBAR COUNT
-  =============================== */
-  function updateCartCount() {
-    const totalItems = cart.reduce((sum, item) => {
-      return sum + item.quantity;
-    }, 0);
-
-    if (cartCount) {
-      cartCount.textContent = totalItems;
-    }
-  }
-
-  /* ===============================
-     SAVE CART
-  =============================== */
+  // ======== SAVE CART TO LOCALSTORAGE ========
   function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  /* ===============================
-     REMOVE ITEM
-  =============================== */
+  // ======== UPDATE CART COUNT IN NAVBAR ========
+  function updateCartCount() {
+    if (!cartCount) return;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+  }
+
+  // ======== REMOVE ITEM ========
   function removeFromCart(id) {
     cart = cart.filter(item => item.id !== id);
     saveCart();
     updateCart();
   }
 
-  /* ===============================
-     CHANGE QUANTITY
-  =============================== */
+  // ======== CHANGE ITEM QUANTITY ========
   function changeQuantity(id, amount) {
     const item = cart.find(item => item.id === id);
-
     if (!item) return;
 
     item.quantity += amount;
@@ -54,10 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCart();
   }
 
-  /* ===============================
-     UPDATE CART UI
-  =============================== */
+  // ======== UPDATE CART DISPLAY ========
   function updateCart() {
+    updateCartCount();
 
     if (!cartItemsContainer) return;
 
@@ -65,15 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-      if (cartTotal) cartTotal.textContent = "";
-      updateCartCount();
+      if (cartTotal) cartTotal.textContent = "0";
       return;
     }
 
     let total = 0;
 
     cart.forEach(item => {
-
       total += item.price * item.quantity;
 
       const div = document.createElement("div");
@@ -84,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <h3>${item.name}</h3>
           <p>RS.${item.price}</p>
         </div>
-
         <div class="cart-controls">
           <button class="decrease" data-id="${item.id}">-</button>
           <span>${item.quantity}</span>
@@ -97,17 +83,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (cartTotal) {
-      cartTotal.textContent = "Total: RS." + total;
+      cartTotal.textContent = total;
     }
-
-    updateCartCount();
   }
 
-  /* ===============================
-     EVENT DELEGATION
-  =============================== */
+  // ======== CLICK HANDLERS FOR CART CONTROLS ========
   document.addEventListener("click", function (e) {
-
     const id = parseInt(e.target.dataset.id);
 
     if (e.target.classList.contains("increase")) {
@@ -121,12 +102,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target.classList.contains("remove")) {
       removeFromCart(id);
     }
-
   });
 
-  /* ===============================
-     INITIAL LOAD
-  =============================== */
-  updateCart();
+  // ======== CLEAR CART BUTTON ========
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener("click", function () {
+      cart = [];
+      saveCart();
+      updateCart();
+    });
+  }
 
+  // ======== CHECKOUT BUTTON PLACEHOLDER ========
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", function () {
+      alert("Checkout integration will be added here.");
+    });
+  }
+
+  // ======== INITIAL RENDER ========
+  updateCart();
 });

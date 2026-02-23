@@ -6,23 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartCount = document.getElementById("cartCount");
 
   /* ===============================
-     CART COUNT UPDATE
+     UPDATE CART COUNT
   =============================== */
   function updateCartCount() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const totalItems = cart.reduce((sum, item) => {
-      return sum + item.quantity;
-    }, 0);
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
     if (cartCount) {
       cartCount.textContent = totalItems;
-
-      // Small animation effect
-      cartCount.classList.add("bump");
-      setTimeout(() => {
-        cartCount.classList.remove("bump");
-      }, 300);
     }
   }
 
@@ -30,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
      CREATE PRODUCT CARD
   =============================== */
   function createCard(product, badgeText = "", badgeClass = "") {
+
     const card = document.createElement("div");
     card.classList.add("product-card");
 
@@ -49,40 +41,42 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===============================
      RENDER PRODUCTS
   =============================== */
-  function renderProducts(productsToRender, targetGrid, badgeText = "", badgeClass = "") {
+  function renderProducts(productsArray, targetGrid, badgeText = "", badgeClass = "") {
+
     if (!targetGrid) return;
 
     targetGrid.innerHTML = "";
 
-    productsToRender.forEach(product => {
+    productsArray.forEach(product => {
       targetGrid.appendChild(createCard(product, badgeText, badgeClass));
     });
   }
 
   /* ===============================
-     INITIAL PRODUCT LOAD
+     INITIAL LOAD
   =============================== */
   if (typeof products !== "undefined") {
 
+    // Main section
     renderProducts(products, mainGrid);
 
+    // Deals (first 4)
     const deals = products.slice(0, 4);
     renderProducts(deals, dealsGrid, "Deal", "deal");
 
+    // Trending
     const trending = products.filter(p => p.isTrending);
     renderProducts(trending, trendingGrid, "Trending", "trending");
   }
 
   /* ===============================
-     ADD TO CART (EVENT DELEGATION)
+     ADD TO CART
   =============================== */
   document.addEventListener("click", function (e) {
 
     if (e.target.classList.contains("add-to-cart")) {
 
-      const button = e.target;
-      const id = parseInt(button.dataset.id);
-
+      const id = parseInt(e.target.dataset.id);
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
       const product = products.find(p => p.id === id);
 
@@ -105,16 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("cart", JSON.stringify(cart));
       updateCartCount();
 
-      // UX feedback instead of alert
-      button.textContent = "Added ✓";
-      button.disabled = true;
+      e.target.textContent = "Added ✓";
+      e.target.disabled = true;
 
       setTimeout(() => {
-        button.textContent = "Add to Cart";
-        button.disabled = false;
-      }, 1200);
+        e.target.textContent = "Add to Cart";
+        e.target.disabled = false;
+      }, 1000);
     }
-
   });
 
   /* ===============================
@@ -122,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   =============================== */
   window.filterProductsByCategory = function (category) {
 
-    if (typeof products === "undefined") return;
+    if (!mainGrid) return;
 
     if (category === "all") {
       renderProducts(products, mainGrid);
@@ -132,9 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  /* ===============================
-     INITIAL CART COUNT LOAD
-  =============================== */
   updateCartCount();
 
 });

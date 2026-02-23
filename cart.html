@@ -1,29 +1,91 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart - UrbanNest</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <div class="logo">UrbanNest</div>
-      <a href="index.html" style="color:white;">Back to Home</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UrbanNest Mart - Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- TOP UTILITY BAR -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span>Welcome to UrbanNest Mart</span>
+        <div class="topbar-links">
+          <a href="#">Deliver to 560001</a>
+          <a href="#">Track Your Order</a>
+          <a href="#">Weekend Specials</a>
+        </div>
+      </div>
     </div>
-  </header>
 
-  <section class="section">
-    <div class="container">
-      <h2>Your Shopping Cart</h2>
-      <div id="cartItems"></div>
-      <h3 id="cartTotal"></h3>
-      <button id="checkoutBtn">Proceed to Checkout</button>
-    </div>
-  </section>
+    <!-- MAIN NAVBAR -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <div class="logo">UrbanNest</div>
 
-  <script src="js/cart.js"></script>
-</body>
+        <button class="nav-toggle">☰</button>
+
+        <div class="search">
+          <input type="text" placeholder="Search groceries, home & more" />
+          <button type="button">Search</button>
+        </div>
+
+        <div class="nav-actions">
+          <a href="index.html">Home</a>
+          <a href="#">Sign In</a>
+          <a href="#">My Orders</a>
+          <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- CART SECTION -->
+    <section class="section">
+      <div class="container">
+        <h2>Your Cart</h2>
+
+        <!-- Container where cart items will be dynamically added -->
+        <div id="cartItems"></div>
+
+        <!-- Cart summary -->
+        <div class="cart-summary">
+          <h3>Total: RS.<span id="cartTotal">0</span></h3>
+          <button id="clearCartBtn">Clear Cart</button>
+          <button id="checkoutBtn">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>About UrbanNest</h4>
+          <a href="#">Our Story</a>
+          <a href="#">Careers</a>
+          <a href="#">Sustainability</a>
+        </div>
+
+        <div>
+          <h4>Customer Support</h4>
+          <a href="#">Returns</a>
+          <a href="#">Shipping Info</a>
+          <a href="#">Help Center</a>
+        </div>
+
+        <div>
+          <h4>Partner With Us</h4>
+          <a href="#">Sell on UrbanNest</a>
+          <a href="#">Affiliate Program</a>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 UrbanNest Mart. All Rights Reserved.</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/cart.js"></script>
+  </body>
 </html>
