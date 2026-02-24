@@ -1,4 +1,3 @@
-
 # UrbanNest Mart
 
 UrbanNest Mart is a responsive front-end e-commerce web application built with HTML, CSS, and JavaScript.  
@@ -66,25 +65,3 @@ This improves scalability and separates data from structure.
 ---
 
 ## Project Structure
-
-Urbannest/
-- assets/
-- js/
-  - product.js
-  - cart.js
-- index.html
-- cart.html
-- style.css
-
----
-
-## Future Improvements
-
-- Persist cart using localStorage
-- Add filtering and search functionality
-- Implement checkout workflow
-- Backend integration
-
----
-
-UrbanNest Mart reflects practical front-end development skills focused on structure, logic, and usability rather than static layout only.
