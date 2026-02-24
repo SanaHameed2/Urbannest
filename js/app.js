@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const trendingGrid = document.getElementById("trendingGrid");
   const cartCount = document.getElementById("cartCount");
 
+  const navToggle = document.querySelector(".nav-toggle");
+  const navActions = document.querySelector(".nav-actions");
+
+  /* ===============================
+     NAV TOGGLE FOR MOBILE
+  =============================== */
+  if (navToggle && navActions) {
+    navToggle.addEventListener("click", function () {
+      navActions.classList.toggle("active");
+    });
+  }
+
   /* ===============================
      UPDATE CART COUNT
   =============================== */
