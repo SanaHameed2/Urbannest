@@ -80,18 +80,7 @@ button {
   transition: var(--transition);
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: white;
-  padding: 12px 28px;
-}
-
-.btn-primary:hover {
-  background: var(--primary-soft-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
+/* ===== TOP UTILITIES & NAVIGATION ===== */
 .topbar {
   background: var(--primary-medium);
   color: white;
@@ -238,6 +227,7 @@ button {
   border-bottom-color: var(--accent);
 }
 
+/* ===== HERO SECTION ===== */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-bg.jpg');
   background-size: cover;
@@ -272,6 +262,7 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
+/* ===== PROMO BANNER ===== */
 .promo-banner {
   background: var(--ramadan-gold);
   color: var(--text-dark);
@@ -290,6 +281,7 @@ button {
   font-weight: 700;
 }
 
+/* ===== SECTION STYLES ===== */
 .section {
   padding: 60px 0;
 }
@@ -298,10 +290,27 @@ button {
   background: #f8f9fa;
 }
 
+/* ===== PRODUCT SECTIONS ===== */
+/* Today's Best Picks - #productGrid */
+/* Limited Time Deals - #dealsGrid */
+/* Trending Products - #trendingGrid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
+}
+
+#trendingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#trendingGrid:empty {
+  display: none;
 }
 
 .product-card {
@@ -370,6 +379,7 @@ button {
   background: var(--ramadan-green);
 }
 
+/* ===== RAMADAN HAMPERS SECTION ===== */
 .ramadan-hampers-section {
   padding: 60px 0;
   background: var(--ramadan-bg);
@@ -519,6 +529,7 @@ button {
   background: var(--primary-soft-dark);
 }
 
+/* ===== NON-FOOD OFFERS ===== */
 .non-food-section {
   padding: 60px 0;
   background: white;
@@ -559,6 +570,7 @@ button {
   font-weight: 600;
 }
 
+/* ===== CATALOG SECTION ===== */
 .catalog-section {
   padding: 60px 0;
   background: #f8f9fa;
@@ -678,6 +690,7 @@ button {
   border-color: var(--accent);
 }
 
+/* ===== MARKETPLACE SECTION ===== */
 .marketplace-section {
   padding: 60px 0;
   background: white;
@@ -719,6 +732,7 @@ button {
   line-height: 1.6;
 }
 
+/* ===== TRUSTED BRANDS ===== */
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -740,20 +754,27 @@ button {
   box-shadow: var(--shadow-md);
 }
 
+/* ===== DISCOVER URBANNEST SECTION ===== */
 .discover-section {
   padding: 60px 0;
   background: var(--bg-light);
+  width: 100%;
+  overflow: hidden;
 }
 
 .discover-section h2 {
   text-align: center;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .discover-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .discover-card {
@@ -761,27 +782,44 @@ button {
   padding: 30px;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.discover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .discover-card h3 {
   color: var(--ramadan-green);
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .discover-card p {
   color: var(--text-medium);
   line-height: 1.6;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .discover-card ul {
   list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: fit-content;
+  text-align: left;
 }
 
 .discover-card li {
   padding: 5px 0;
   color: var(--text-medium);
   border-bottom: 1px dashed var(--border-light);
+  text-align: left;
 }
 
 .discover-card a {
@@ -789,12 +827,16 @@ button {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
+  display: inline-block;
+  margin-top: 15px;
+  align-self: center;
 }
 
 .discover-card a:hover {
   color: var(--primary-soft-dark);
 }
 
+/* ===== FEEDBACK SECTION ===== */
 .feedback-section {
   padding: 60px 0;
   background: white;
@@ -850,6 +892,58 @@ button {
   box-shadow: var(--shadow-md);
 }
 
+/* ===== ZAKAT & SADAQAH INFO ===== */
+.zakat-info-section {
+  padding: 60px 0;
+  background: white;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.info-card {
+  background: var(--bg-light);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card h3 {
+  color: var(--ramadan-green);
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  color: var(--text-medium);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.steps-list {
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.steps-list li {
+  margin-bottom: 12px;
+  color: var(--text-medium);
+}
+
+.steps-list strong {
+  color: var(--primary-dark);
+}
+
+.note {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* ===== NEWSLETTER SECTION ===== */
 .newsletter {
   background: var(--accent-light);
   padding: 60px 0;
@@ -903,56 +997,7 @@ button {
   font-style: italic;
 }
 
-.zakat-info-section {
-  padding: 60px 0;
-  background: white;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.info-card {
-  background: var(--bg-light);
-  padding: 35px;
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-}
-
-.info-card h3 {
-  color: var(--ramadan-green);
-  margin-bottom: 20px;
-}
-
-.info-card p {
-  color: var(--text-medium);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-.steps-list {
-  padding-left: 20px;
-  margin: 20px 0;
-}
-
-.steps-list li {
-  margin-bottom: 12px;
-  color: var(--text-medium);
-}
-
-.steps-list strong {
-  color: var(--primary-dark);
-}
-
-.note {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 500;
-  margin-top: 20px;
-}
-
+/* ===== FOOTER ===== */
 .footer {
   background: var(--primary-dark);
   color: white;
@@ -992,8 +1037,13 @@ button {
   font-size: 0.9rem;
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 1200px) {
   .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  #trendingGrid {
     grid-template-columns: repeat(3, 1fr);
   }
   
@@ -1054,6 +1104,7 @@ button {
   
   .hampers-grid,
   .product-grid,
+  #trendingGrid,
   .info-grid,
   .marketplace-grid,
   .discover-grid {
