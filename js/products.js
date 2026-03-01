@@ -11,7 +11,7 @@ const products = [
     id: 2,
     name: "Fresh Milk (1L)",
     price: 58,
-    image: "assets/images/milkpack.jpg",
+    image: "assets/images/OIP.jpg",
     category: "dairy",
     isTrending: true
   },
