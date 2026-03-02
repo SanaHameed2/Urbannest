@@ -41,7 +41,7 @@ body {
 }
 
 .container {
-  width: min(1300px, 95%);
+  width: min(1400px, 96%);
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -904,8 +904,9 @@ button {
 
 /* ===== ZAKAT & SADAQAH INFO ===== */
 .zakat-info-section {
-  padding: 60px 0;
+  padding: 80px 0;
   background: white;
+  margin-bottom: 40px;
 }
 
 .info-grid {
@@ -916,20 +917,21 @@ button {
 
 .info-card {
   background: var(--bg-light);
-  padding: 35px;
+  padding: 25px;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
 }
 
 .info-card h3 {
   color: var(--ramadan-green);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
 }
 
 .info-card p {
   color: var(--text-medium);
-  line-height: 1.7;
-  margin-bottom: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 .steps-list {
