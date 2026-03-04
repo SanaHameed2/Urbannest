@@ -62,7 +62,7 @@ h3 {
 
 .section-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .section-header p {
@@ -236,8 +236,11 @@ button {
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 100px 0;
+  padding: 120px 0;
   text-align: center;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero h1 {
@@ -286,7 +289,7 @@ button {
 
 /* ===== SECTION STYLES ===== */
 .section {
-  padding: 60px 0;
+  padding: 100px 0;
 }
 
 .section.light-bg {
@@ -296,23 +299,23 @@ button {
 /* ===== PRODUCT SECTIONS ===== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 #trendingGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .product-card {
   background: var(--bg-white);
-  padding: 14px 16px;
+  padding: 12px 12px;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -329,33 +332,34 @@ button {
   aspect-ratio: 4/5;
   object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 #trendingGrid .product-card img {
   aspect-ratio: 3 / 4;
-  max-height: 320px;
+  max-height: 280px;
 }
 
 .product-card h3 {
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
 }
 
 .price {
   color: var(--accent);
   font-weight: 700;
-  font-size: 1.2rem;
-  margin: 8px 0;
+  font-size: 1.1rem;
+  margin: 6px 0;
 }
 
 .add-to-cart {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   background: var(--accent);
   color: white;
   border-radius: 8px;
-  margin-top: 12px;
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 
 .add-to-cart:hover {
@@ -383,20 +387,20 @@ button {
 
 /* ===== RAMADAN HAMPERS SECTION ===== */
 .ramadan-hampers-section {
-  padding: 60px 0;
+  padding: 100px 0;
   background: var(--ramadan-bg);
 }
 
 .hampers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
 .hamper-card {
   background: var(--bg-white);
   border-radius: 20px;
-  padding: 24px;
+  padding: 20px;
   box-shadow: var(--shadow-sm);
   position: relative;
   transition: var(--transition);
@@ -432,36 +436,36 @@ button {
 }
 
 .hamper-card h3 {
-  font-size: 1.4rem;
-  margin: 16px 0 20px;
+  font-size: 1.3rem;
+  margin: 12px 0 16px;
   text-align: center;
 }
 
 .hamper-items-info {
   background: var(--bg-light);
-  padding: 16px;
+  padding: 12px;
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .items-count {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-dark);
   font-weight: 500;
 }
 
 .hamper-price {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--ramadan-green);
 }
 
 .hamper-items-list {
-  margin-bottom: 20px;
-  max-height: 280px;
+  margin-bottom: 16px;
+  max-height: 250px;
   overflow-y: auto;
   padding-right: 8px;
 }
@@ -471,10 +475,10 @@ button {
 }
 
 .hamper-items-list li {
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: 1px dashed var(--border-light);
   color: var(--text-medium);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .hamper-items-list li:last-child {
@@ -482,29 +486,31 @@ button {
 }
 
 .quantity-selector {
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .quantity-selector label {
   display: block;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--primary-dark);
+  font-size: 0.9rem;
 }
 
 .quantity-buttons {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .qty-option {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   background: #f5f5f5;
   border: 2px solid var(--border-light);
   border-radius: 8px;
   font-weight: 600;
-  min-height: 44px;
+  min-height: 40px;
+  font-size: 0.9rem;
 }
 
 .qty-option:hover {
@@ -519,10 +525,10 @@ button {
 
 .add-hamper-btn {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   background: var(--ramadan-green);
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 8px;
 }
@@ -533,7 +539,7 @@ button {
 
 /* ===== NON-FOOD OFFERS ===== */
 .non-food-section {
-  padding: 60px 0;
+  padding: 100px 0;
   background: white;
 }
 
@@ -545,12 +551,12 @@ button {
 .electronics-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 40px;
 }
 
 .electronic-item {
   background: var(--bg-light);
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   text-align: center;
   transition: var(--transition);
@@ -563,18 +569,19 @@ button {
 
 .electronic-item h4 {
   color: var(--primary-dark);
-  margin-bottom: 8px;
-  font-size: 1rem;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
 }
 
 .electronic-item p {
   color: var(--accent);
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 /* ===== CATALOG SECTION ===== */
 .catalog-section {
-  padding: 60px 0;
+  padding: 100px 0;
   background: #f8f9fa;
 }
 
@@ -616,12 +623,12 @@ button {
 .offers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 40px;
 }
 
 .offer-item {
   background: var(--bg-white);
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   text-align: center;
   box-shadow: var(--shadow-sm);
@@ -630,14 +637,15 @@ button {
 .offer-date {
   color: var(--accent);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: block;
+  font-size: 0.9rem;
 }
 
 .brand-products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
+  gap: 40px;
   margin: 40px 0;
 }
 
@@ -648,7 +656,7 @@ button {
     var(--primary-medium)
   );
   color: white;
-  padding: 20px;
+  padding: 16px;
   border-radius: 12px;
   text-align: center;
   transition: var(--transition);
@@ -660,12 +668,12 @@ button {
 }
 
 .brand-product-card h4 {
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
 }
 
 .brand-product-card p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   opacity: 0.9;
 }
 
@@ -683,11 +691,12 @@ button {
   background: var(--bg-white);
   color: var(--text-medium);
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border-radius: 30px;
   font-weight: 500;
   transition: var(--transition);
   border: 1px solid var(--border-light);
+  font-size: 0.9rem;
 }
 
 .category-tags a:hover {
@@ -698,7 +707,7 @@ button {
 
 /* ===== MARKETPLACE SECTION ===== */
 .marketplace-section {
-  padding: 60px 0;
+  padding: 100px 0;
   background: white;
 }
 
@@ -710,7 +719,7 @@ button {
 .marketplace-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
 .marketplace-card {
@@ -720,7 +729,7 @@ button {
     var(--primary-medium)
   );
   color: white;
-  padding: 35px;
+  padding: 30px;
   border-radius: 16px;
   text-align: center;
   transition: var(--transition);
@@ -733,32 +742,42 @@ button {
 
 .marketplace-card h3 {
   color: white;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 
 .marketplace-card p {
   opacity: 0.9;
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* ===== TRUSTED BRANDS ===== */
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
+  justify-content: center;
+  gap: 24px;
 }
 
 .brand-card {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, #0f1b2a, #0c1622);
   color: white;
-  padding: 30px;
-  text-align: center;
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 600;
-  transition: var(--transition);
-}
+  font-size: 0.95rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.brand-card {
+  padding: 14px 8px;
+  
+}
 .brand-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
@@ -766,7 +785,7 @@ button {
 
 /* ===== DISCOVER URBANNEST SECTION ===== */
 .discover-section {
-  padding: 60px 0;
+  padding: 100px 0;
   background: var(--bg-light);
   width: 100%;
   overflow: hidden;
@@ -781,15 +800,16 @@ button {
 .discover-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 40px;
   justify-content: center;
   margin: 0 auto;
   width: 100%;
+  max-width: 900px;
 }
 
 .discover-card {
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
   height: 100%;
@@ -797,6 +817,9 @@ button {
   flex-direction: column;
   text-align: center;
   transition: var(--transition);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
 }
 
 .discover-card:hover {
@@ -806,15 +829,17 @@ button {
 
 .discover-card h3 {
   color: var(--ramadan-green);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .discover-card p {
   color: var(--text-medium);
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: center;
+  font-size: 0.95rem;
 }
 
 .discover-card ul {
@@ -826,10 +851,11 @@ button {
 }
 
 .discover-card li {
-  padding: 5px 0;
+  padding: 4px 0;
   color: var(--text-medium);
   border-bottom: 1px dashed var(--border-light);
   text-align: left;
+  font-size: 0.9rem;
 }
 
 .discover-card a {
@@ -838,17 +864,24 @@ button {
   font-weight: 600;
   transition: color 0.3s;
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 12px;
   align-self: center;
+  font-size: 0.95rem;
 }
 
 .discover-card a:hover {
   color: var(--primary-soft-dark);
 }
 
+/* Center the two cards specifically */
+.discover-grid:has(.discover-card:only-child) {
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
 /* ===== FEEDBACK SECTION ===== */
 .feedback-section {
-  padding: 60px 0;
+  padding: 100px 0;
   background: white;
 }
 
@@ -874,6 +907,7 @@ button {
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  font-size: 0.95rem;
 }
 
 .rating-options input[type="radio"] {
@@ -904,7 +938,7 @@ button {
 
 /* ===== ZAKAT & SADAQAH INFO ===== */
 .zakat-info-section {
-  padding: 80px 0;
+  padding: 100px 0;
   background: white;
   margin-bottom: 40px;
 }
@@ -924,7 +958,7 @@ button {
 
 .info-card h3 {
   color: var(--ramadan-green);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   font-size: 1.2rem;
 }
 
@@ -932,16 +966,18 @@ button {
   color: var(--text-medium);
   line-height: 1.6;
   margin-bottom: 12px;
+  font-size: 0.95rem;
 }
 
 .steps-list {
   padding-left: 20px;
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .steps-list li {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--text-medium);
+  font-size: 0.95rem;
 }
 
 .steps-list strong {
@@ -952,13 +988,14 @@ button {
   font-style: italic;
   color: var(--accent);
   font-weight: 500;
-  margin-top: 20px;
+  margin-top: 16px;
+  font-size: 0.95rem;
 }
 
 /* ===== NEWSLETTER SECTION ===== */
 .newsletter {
   background: var(--accent-light);
-  padding: 60px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
@@ -970,6 +1007,7 @@ button {
 .newsletter-inner p {
   color: var(--text-medium);
   margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 .newsletter-form {
@@ -1007,6 +1045,7 @@ button {
   margin-top: 15px;
   color: var(--primary-dark);
   font-style: italic;
+  font-size: 0.95rem;
 }
 
 /* ===== FOOTER ===== */
@@ -1035,6 +1074,7 @@ button {
   text-decoration: none;
   margin-bottom: 10px;
   transition: color 0.3s;
+  font-size: 0.9rem;
 }
 
 .footer a:hover {
@@ -1053,18 +1093,22 @@ button {
 @media (max-width: 1200px) {
   #trendingGrid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
   }
 
   .hampers-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
   }
 
   .electronics-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
   }
 
   .brand-products {
     grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
   }
 }
 
@@ -1075,10 +1119,12 @@ button {
 
   .marketplace-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
   }
 
   .brand-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
   }
 }
 
@@ -1113,6 +1159,7 @@ button {
   .info-grid,
   .discover-grid {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
 
   .hamper-card.featured {
@@ -1122,10 +1169,12 @@ button {
   .electronics-grid,
   .brand-products {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .brand-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 
   .catalog-links {
@@ -1141,12 +1190,26 @@ button {
   }
 
   .hero {
-    padding: 60px 0;
+    padding: 80px 0;
+    min-height: 70vh;
   }
 
   .newsletter-form {
     flex-direction: column;
     padding: 0 20px;
+  }
+  
+  .product-grid,
+  #trendingGrid,
+  .hampers-grid,
+  .marketplace-grid,
+  .discover-grid,
+  .offers-grid {
+    gap: 25px;
+  }
+  
+  .discover-card {
+    max-width: 100%;
   }
 }
 
@@ -1165,6 +1228,7 @@ button {
   .brand-products,
   .brand-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
 
   .footer-grid {
@@ -1173,6 +1237,7 @@ button {
 
   .marketplace-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
 
   .categories {
@@ -1185,5 +1250,18 @@ button {
 
   .hamper-price {
     font-size: 1.2rem;
+  }
+  
+  .section,
+  .ramadan-hampers-section,
+  .newsletter,
+  .feedback-section,
+  .zakat-info-section,
+  .non-food-section,
+  .catalog-section,
+  .marketplace-section,
+  .discover-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 }
