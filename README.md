@@ -1,67 +1,48 @@
 # UrbanNest Mart
 
-UrbanNest Mart is a responsive front-end e-commerce web application built with HTML, CSS, and JavaScript.  
-It simulates a basic online shopping experience with dynamic product rendering and cart management.
+UrbanNest Mart is a responsive front-end e-commerce web application built with **HTML, CSS, and JavaScript**.  
+It simulates a small-scale online grocery store with dynamic product browsing and cart management.
 
 ---
 
 ## Overview
 
-This project replicates a small-scale online grocery store interface where users can:
+Users can:
 
-- Browse products
-- Add items to cart
-- View and update cart contents
-- Navigate between pages
+- Browse products dynamically  
+- Add items to cart and update cart contents  
+- Navigate between pages  
 
-The focus is on application logic, structured code organization, and responsive UI.
-
----
-
-## Tech Stack
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla JS)
-
-No frameworks or external libraries used.
+Focus is on structured code, responsive UI, and front-end application logic.
 
 ---
 
 ## Core Features
 
-### Dynamic Product Rendering
-Products are generated using `product.js` instead of static HTML.  
-This improves scalability and separates data from structure.
-
-### Cart Management
-- Add to cart functionality
-- Dedicated `cart.html` page
-- Cart logic handled in `cart.js`
-- Dynamic quantity updates
-- Automatic total calculation
-
-### Multi-Page Structure
-- `index.html` – Product listing
-- `cart.html` – Cart overview
-- Modular JavaScript files for logic separation
-
-### Responsive Design
-- Mobile-friendly layout
-- Flexible grid structure
-- Media queries for different screen sizes
+- **Dynamic Product Rendering** – Products are generated using JavaScript instead of static HTML  
+- **Cart Management** – Add, remove, and update items; cart page overview  
+- **Multi-Page Structure** – `index.html` for products, `cart.html` for cart; modular JS files for logic separation  
+- **Responsive UI** – Works across devices and screen sizes
 
 ---
 
-## What This Demonstrates
+## Tech Stack
 
-- DOM manipulation
-- Event handling
-- Basic state management
-- Separation of concerns
-- Scalable front-end structure
-- Clean and responsive UI implementation
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla)
 
 ---
 
 ## Project Structure
+
+```plaintext
+UrbanNestMart/
+├─ index.html       # Landing page
+├─ cart.html        # Cart overview
+├─ style.css        # Global styles
+├─ script.js        # Main JavaScript logic
+├─ cart.js          # Cart functionality
+├─ assets/          # Images & icons
+├─ components/      # Reusable UI elements
+└─ README.md        # Documentation
