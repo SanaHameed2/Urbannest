@@ -38,7 +38,7 @@ Focus is on structured code, responsive UI, and front-end application logic.
 
 ```plaintext
 UrbanNestMart/
-├─ index.html       # Landing page
+├─ index.html       # Main page
 ├─ cart.html        # Cart overview
 ├─ style.css        # Global styles
 ├─ script.js        # Main JavaScript logic
