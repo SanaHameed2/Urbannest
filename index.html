@@ -1,415 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UrbanNest Mart - Ramadan Hampers 2026</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- ===== TOP UTILITIES & NAVIGATION ===== -->
-    <!-- Top Utility Bar -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Nest - Modern Living Essentials</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
     <div class="topbar">
-      <div class="container topbar-inner">
-        <span>Welcome to UrbanNest Mart</span>
-        <div class="topbar-links">
-          <a href="#">Deliver to 560001</a>
-          <a href="#">Track Your Order</a>
-          <a href="#">Weekend Specials</a>
+        <div class="container">
+            <div class="topbar-inner">
+                <span>🏠 Welcome to Urban Nest - Your Modern Living Destination</span>
+                <div class="topbar-links">
+                    <a href="#">Store Locator</a>
+                    <a href="#">Track Order</a>
+                    <a href="#">Weekend Deals</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-    <!-- Main Navbar -->
+    <!-- Navbar -->
     <header class="navbar">
-      <div class="container navbar-inner">
-        <div class="logo">UrbanNest</div>
-        <button class="nav-toggle">☰</button>
-        <div class="search">
-          <input type="text" placeholder="Search groceries, home & more" />
-          <button type="button">Search</button>
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="logo">URBAN<span>NEST</span></div>
+                <button class="nav-toggle">☰</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search furniture, decor, kitchen & more...">
+                    <button>Search</button>
+                </div>
+                <div class="nav-actions">
+                    <a href="index.html">Home</a>
+                    <a href="categories.html">Categories</a>
+                    <a href="offers.html">Offers</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+                </div>
+            </div>
         </div>
-        <div class="nav-actions">
-          <a href="#">Sign In</a>
-          <a href="#">My Orders</a>
-          <a href="cart.html"> Cart (<span id="cartCount">0</span>) </a>
-        </div>
-      </div>
     </header>
 
     <!-- Category Strip -->
     <div class="category-strip">
-      <div class="container categories">
-        <a href="#" onclick="filterProductsByCategory('all')">All</a>
-        <a href="#" onclick="filterProductsByCategory('vegetables')">Fresh Vegetables</a>
-        <a href="#" onclick="filterProductsByCategory('fruits')">Fruits</a>
-        <a href="#" onclick="filterProductsByCategory('dairy')">Dairy & Bakery</a>
-        <a href="#" onclick="filterProductsByCategory('home')">Home Essentials</a>
-        <a href="#" onclick="filterProductsByCategory('kitchen')">Kitchenware</a>
-        <a href="#" onclick="filterProductsByCategory('personal')">Personal Care</a>
-        <a href="#">Ramadan Specials</a>
-        <a href="#">UrbanNest Own Brand</a>
-      </div>
+        <div class="container">
+            <div class="categories">
+                <a href="#" onclick="filterProductsByCategory('all')">All</a>
+                <a href="#" onclick="filterProductsByCategory('furniture')">Furniture</a>
+                <a href="#" onclick="filterProductsByCategory('decor')">Home Decor</a>
+                <a href="#" onclick="filterProductsByCategory('kitchen')">Kitchen</a>
+                <a href="#" onclick="filterProductsByCategory('lighting')">Lighting</a>
+                <a href="#" onclick="filterProductsByCategory('bedding')">Bedding</a>
+                <a href="#" onclick="filterProductsByCategory('bath')">Bath</a>
+            </div>
+        </div>
     </div>
 
-    <!-- ===== HERO & MAIN PROMOTIONS ===== -->
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1>Fresh Deals for Everyday Living</h1>
-          <p>Up to 50% Off on Groceries & Home Essentials</p>
-          <button type="button">Shop Now</button>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Modern Living,<br>Thoughtfully Curated</h1>
+                <p>Up to 40% Off on Furniture & Home Decor</p>
+                <button class="btn-primary">Shop Now</button>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Promo Banner -->
-    <section class="promo-banner">
-      <div class="container">
-        <h2>
-          🌙 Ramadan 2026: Donate Ramadan Hampers for a Blessed Month in Pakistan —
-          <span class="highlight">Zakat & Sadaqah Donations</span>
-        </h2>
-      </div>
-    </section>
-
-    <!-- ===== PRODUCT SECTIONS ===== -->
-    <!-- Today's Best Picks -->
+    <!-- Trending Products Section -->
     <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Today's Best Picks</h2>
+        <div class="container">
+            <div class="section-header">
+                <h2>Trending Now 🔥</h2>
+                <p>Most popular items this week</p>
+            </div>
+            <div class="product-grid" id="trendingGrid"></div>
         </div>
-        <div class="product-grid" id="productGrid"></div>
-      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section light-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Today's Best Picks</h2>
+                <p>Handpicked just for you</p>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
     </section>
 
     <!-- Limited Time Deals -->
-    <section class="section light-bg">
-      <div class="container">
-        <div class="section-header">
-          <h2>Limited Time Deals</h2>
-        </div>
-        <div class="product-grid" id="dealsGrid"></div>
-      </div>
-    </section>
-
-    <!-- Trending Products -->
     <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Trending Products</h2>
+        <div class="container">
+            <div class="section-header">
+                <h2>Limited Time Deals ⏰</h2>
+                <p>Offer ends soon</p>
+            </div>
+            <div class="product-grid" id="dealsGrid"></div>
         </div>
-        <div class="product-grid" id="trendingGrid"></div>
-      </div>
     </section>
 
-    <!-- Non-Food Offers Section -->
-    <section class="non-food-section">
-      <div class="container">
-        <h2>Non-Food Offers</h2>
-        <div class="electronics-grid">
-          <div class="electronic-item">
-            <h4>TCL 58 Android 4K TV</h4>
-            <p>P435</p>
-          </div>
-          <div class="electronic-item">
-            <h4>Haier 40 Android TV</h4>
-            <p>K6600</p>
-          </div>
-          <div class="electronic-item">
-            <h4>TCL 50 Android TV</h4>
-            <p>P435</p>
-          </div>
-          <div class="electronic-item">
-            <h4>Haier Washing Machine</h4>
-            <p>Top Load 8KG 80-1269</p>
-          </div>
-          <div class="electronic-item">
-            <h4>Samsung 55 QLED TV</h4>
-            <p>Q60B</p>
-          </div>
+    <!-- Categories Showcase -->
+    <section class="categories-showcase">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterProductsByCategory('furniture')">
+                    <div class="category-icon">🪑</div>
+                    <h3>Furniture</h3>
+                </div>
+                <div class="category-card" onclick="filterProductsByCategory('decor')">
+                    <div class="category-icon">🖼️</div>
+                    <h3>Home Decor</h3>
+                </div>
+                <div class="category-card" onclick="filterProductsByCategory('kitchen')">
+                    <div class="category-icon">🍳</div>
+                    <h3>Kitchen</h3>
+                </div>
+                <div class="category-card" onclick="filterProductsByCategory('lighting')">
+                    <div class="category-icon">💡</div>
+                    <h3>Lighting</h3>
+                </div>
+                <div class="category-card" onclick="filterProductsByCategory('bedding')">
+                    <div class="category-icon">🛏️</div>
+                    <h3>Bedding</h3>
+                </div>
+                <div class="category-card" onclick="filterProductsByCategory('bath')">
+                    <div class="category-icon">🚿</div>
+                    <h3>Bath</h3>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- UrbanNest Catalog Section -->
-    <section class="catalog-section">
-      <div class="container">
-        <div class="catalog-header">
-          <h1>UrbanNest Own Brand Offers</h1>
-          <div class="catalog-links">
-            <a href="#">OUR STORES</a>
-            <a href="#">URBANNEST POST</a>
-            <a href="#">SUBSCRIBE NEWSLETTER</a>
-            <a href="#">URBANNEST REWARDS</a>
-          </div>
-        </div>
-
-        <div class="own-brand-offers">
-<div class="offers-grid">
-            <div class="offer-item">
-              <span class="offer-date">12/03/2026</span>
-              <h4>Ramadan Special 2026</h4>
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h4>Free Shipping</h4>
+                    <p>On orders above ₹999</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h4>Easy Returns</h4>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Secure Payment</h4>
+                    <p>100% secure transactions</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📞</div>
+                    <h4>24/7 Support</h4>
+                    <p>Always here to help</p>
+                </div>
             </div>
-          </div>
         </div>
-
-        <div class="brand-products">
-          <div class="brand-product-card">
-            <h4>UrbanNest Bleach</h4>
-            <p>500 ML</p>
-          </div>
-          <div class="brand-product-card">
-            <h4>UrbanNest Chicken Seekh Kebab</h4>
-            <p>50 g</p>
-          </div>
-          <div class="brand-product-card">
-            <h4>UrbanNest Super Basmati Rice</h4>
-            <p>1 kg</p>
-          </div>
-          <div class="brand-product-card">
-            <h4>UrbanNest Tissues Pop up Black</h4>
-            <p>150 PCS</p>
-          </div>
-          <div class="brand-product-card">
-            <h4>UrbanNest Chicken Bites</h4>
-            <p>780 GM</p>
-          </div>
-        </div>
-
-        </div>
-      </div>
     </section>
 
-    <!-- Online Marketplace Section -->
-    <section class="marketplace-section">
-      <div class="container">
-        <h2>Online Market Place</h2>
-        <div class="marketplace-grid">
-          <div class="marketplace-card">
-            <h3>AIR CONDITIONERS</h3>
-            <p>Buy all the best Air Conditioners at UrbanNest</p>
-          </div>
-          <div class="marketplace-card">
-            <h3>KITCHEN ELECTRONICS</h3>
-            <p>Buy the best kitchen electronics at UrbanNest</p>
-          </div>
-          <div class="marketplace-card">
-            <h3>TV & ENTERTAINMENT</h3>
-            <p>Buy the best LEDs, and electronics at UrbanNest</p>
-          </div>
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get 10% off your first order and exclusive deals</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Brands Section -->
-    <section class="section light-bg">
-      <div class="container">
-        <div class="section-header">
-          <h2>Trusted Brands</h2>
-        </div>
-        <div class="brand-grid">
-          <div class="brand-card">UrbanNest</div>
-          <div class="brand-card">FALAK</div>
-          <div class="brand-card">DALDA</div>
-          <div class="brand-card">LOREAL</div>
-          <div class="brand-card">Urban Chef</div>
-          <div class="brand-card">TCL</div>
-          <div class="brand-card">Haier</div>
-          <div class="brand-card">Samsung</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Ramadan Hampers Section (Featured) -->
-    <section class="ramadan-hampers-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>🌙 UrbanNest Ramadan Hampers 2026</h2>
-          <p>Support families in need with our carefully curated Ramadan packages. Available in all major cities across Pakistan.</p>
-        </div>
-
-        <div class="hampers-grid">
-          <!-- Package 1 - Blessings -->
-          <div class="hamper-card">
-            <div class="hamper-badge">Best Seller</div>
-            <h3>Blessings Package</h3>
-            <div class="hamper-items-info">
-              <span class="items-count">10 Items</span>
-              <span class="hamper-price">Rs. 2,499/-</span>
-            </div>
-            <div class="hamper-items-list">
-              <ul>
-                <li>White Sugar 1kg</li>
-                <li>Atta 5kg</li>
-                <li>Baisan 1kg</li>
-                <li>Iodized Salt 800G</li>
-                <li>UrbanNest Basmati Rice 1kg</li>
-                <li>Tea 85G</li>
-                <li>Cooking Oil 1L</li>
-                <li>Dates 500g</li>
-                <li>Lentils 1kg</li>
-                <li>Milk Powder 400g</li>
-              </ul>
-            </div>
-            <div class="quantity-selector">
-              <label>Quantity:</label>
-              <div class="quantity-buttons">
-                <button class="qty-option active" data-qty="5">5</button>
-                <button class="qty-option" data-qty="10">10</button>
-                <button class="qty-option" data-qty="20">20</button>
-                <button class="qty-option" data-qty="50">50</button>
-              </div>
-            </div>
-            <button class="add-hamper-btn" data-package="1" data-price="2499">Add to Cart</button>
-          </div>
-
-          <!-- Package 2 - Prosperity (Featured) -->
-          <div class="hamper-card featured">
-            <div class="hamper-badge premium">Family Pack</div>
-            <h3>Prosperity Package</h3>
-            <div class="hamper-items-info">
-              <span class="items-count">15 Items</span>
-              <span class="hamper-price">Rs. 3,999/-</span>
-            </div>
-            <div class="hamper-items-list">
-              <ul>
-                <li>White Sugar 2kg</li>
-                <li>Atta 10kg</li>
-                <li>Baisan 2kg</li>
-                <li>Iodized Salt 800G</li>
-                <li>UrbanNest Super Basmati 5kg</li>
-                <li>Tea 200G</li>
-                <li>Cooking Oil 3L</li>
-                <li>Dates 1kg</li>
-                <li>Lentils Mix 2kg</li>
-                <li>Milk Powder 800g</li>
-                <li>UrbanNest Chicken Bites 780g</li>
-                <li>UrbanNest Bleach 500ml</li>
-                <li>UrbanNest Tissues 150 pcs</li>
-                <li>UrbanNest Chicken Seekh Kebab 50g</li>
-              </ul>
-            </div>
-            <div class="quantity-selector">
-              <label>Quantity:</label>
-              <div class="quantity-buttons">
-                <button class="qty-option active" data-qty="5">5</button>
-                <button class="qty-option" data-qty="10">10</button>
-                <button class="qty-option" data-qty="20">20</button>
-                <button class="qty-option" data-qty="50">50</button>
-              </div>
-            </div>
-            <button class="add-hamper-btn" data-package="2" data-price="3999">Add to Cart</button>
-          </div>
-
-          <!-- Package 3 - Royal Feast -->
-          <div class="hamper-card">
-            <div class="hamper-badge premium">Premium</div>
-            <h3>Royal Feast Package</h3>
-            <div class="hamper-items-info">
-              <span class="items-count">20 Items</span>
-              <span class="hamper-price">Rs. 5,999/-</span>
-            </div>
-            <div class="hamper-items-list">
-              <ul>
-                <li>White Sugar 3kg</li>
-                <li>Atta 15kg</li>
-                <li>Baisan 3kg</li>
-                <li>Iodized Salt 800G x2</li>
-                <li>UrbanNest Super Basmati 10kg</li>
-                <li>Tea 400G</li>
-                <li>Cooking Oil 5L</li>
-                <li>Premium Dates 1.5kg</li>
-                <li>Lentils Premium Mix 3kg</li>
-                <li>Milk Powder 1.2kg</li>
-                <li>UrbanNest Chicken Bites 780g x2</li>
-                <li>UrbanNest Bleach 500ml x2</li>
-                <li>UrbanNest Tissues 150 pcs x2</li>
-                <li>UrbanNest Chicken Seekh Kebab 100g</li>
-                <li>UrbanNest Basmati Rice 1kg</li>
-                <li>Vegetable Ghee 2kg</li>
-                <li>Vermicelli 500g</li>
-                <li>Chickpeas 1kg</li>
-                <li>Beans 500g</li>
-                <li>Tomato Paste 400g</li>
-              </ul>
-            </div>
-            <div class="quantity-selector">
-              <label>Quantity:</label>
-              <div class="quantity-buttons">
-                <button class="qty-option active" data-qty="5">5</button>
-                <button class="qty-option" data-qty="10">10</button>
-                <button class="qty-option" data-qty="20">20</button>
-                <button class="qty-option" data-qty="50">50</button>
-              </div>
-            </div>
-            <button class="add-hamper-btn" data-package="3" data-price="5999">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    
- 
-    <!-- ===== FEEDBACK SECTION ===== -->
-    <section class="feedback-section">
-      <div class="container">
-        <h2>How satisfied are you with the content and structure of the Homepage?</h2>
-        <div class="rating-options">
-          <label><input type="radio" name="satisfaction" value="1"> Very dissatisfied</label>
-          <label><input type="radio" name="satisfaction" value="2"> Dissatisfied</label>
-          <label><input type="radio" name="satisfaction" value="3"> Neutral</label>
-          <label><input type="radio" name="satisfaction" value="4"> Satisfied</label>
-          <label><input type="radio" name="satisfaction" value="5"> Very satisfied</label>
-        </div>
-        <button class="submit-feedback">Submit Feedback</button>
-      </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <h4>About UrbanNest</h4>
-          <a href="#">Our Story</a>
-          <a href="#">Careers</a>
-          <a href="#">Sustainability</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>About Urban Nest</h4>
+                    <a href="about.html">Our Story</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns & Exchanges</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="categories.html">All Categories</a>
+                    <a href="offers.html">Special Offers</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#">📘 Facebook</a>
+                        <a href="#">📷 Instagram</a>
+                        <a href="#">🐦 Twitter</a>
+                        <a href="#">📌 Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Urban Nest. All rights reserved.</p>
+            </div>
         </div>
-        <div>
-          <h4>Customer Support</h4>
-          <a href="#">Returns</a>
-          <a href="#">Shipping Info</a>
-          <a href="#">Help Center</a>
-        </div>
-        <div>
-          <h4>Partner With Us</h4>
-          <a href="#">Sell on UrbanNest</a>
-          <a href="#">Affiliate Program</a>
-        </div>
-        <div>
-          <h4>UrbanNest Stores</h4>
-          <a href="#">Lahore</a>
-          <a href="#">Karachi</a>
-          <a href="#">Islamabad</a>
-          <a href="#">Rawalpindi</a>
-          <a href="#">Multan</a>
-          <a href="#">Faisalabad</a>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <a href="#">Contact Nearest Store</a>
-          <a href="#">Pick-Up Options</a>
-          <a href="#">In-Store Services</a>
-        </div>
-      </div>
-      <p class="copyright">© 2026 UrbanNest Mart. All Rights Reserved. Ramadan Mubarak 2026</p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script src="js/products.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/cart.js"></script>
-  </body>
+</body>
 </html>
