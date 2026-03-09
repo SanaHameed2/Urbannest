@@ -331,10 +331,7 @@ button {
 .view-all-link {
   color: var(--accent);
   text-decoration: none;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: var(--accent-light);
+  font-weight: 400;
   transition: var(--transition);
   min-height: 44px;
   display: inline-flex;
@@ -365,92 +362,39 @@ button {
 }
 
 /* ===== PRODUCT SECTIONS ===== */
-.product-grid {
+.product-grid,
+#trendingGrid,
+#productGrid,
+#dealsGrid,
+.hampers-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+  gap: 24px;
+  justify-content: center;
+  max-width: 1400px;
   margin: 0 auto;
-  justify-items: center;
 }
 
-#trendingGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 1100px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-#productGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-#dealsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-@media (min-width: 768px) {
-  .product-grid,
-  #trendingGrid,
-  #productGrid,
-  #dealsGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .product-grid,
-  #trendingGrid,
-  #productGrid,
-  #dealsGrid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .product-grid,
-  #trendingGrid,
-  #productGrid,
-  #dealsGrid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.product-card {
+.product-card,
+.hamper-card {
+  width: 100%;
+  max-width: 280px;
   background: var(--bg-white);
-  padding: 12px 12px;
   border-radius: 16px;
+  padding: 14px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
-  width: 100%;
-  max-width: 280px;
 }
 
-.product-card:hover {
+.product-card:hover,
+.hamper-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
 }
 
-.product-card img {
+.product-card img,
+.hamper-card img {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
@@ -592,12 +536,6 @@ button {
 .ramadan-hampers-section {
   padding: 100px 0;
   background: var(--ramadan-bg);
-}
-
-.hampers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
 }
 
 .hamper-card {
@@ -941,57 +879,6 @@ button {
     }
 }
 
-/* Product Card Styles (ensure these exist) */
-.product-card {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-}
-
-.product-card img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-    color: var(--text-dark);
-}
-
-.product-card .price {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin: 10px 0;
-}
-
-.product-card .add-to-cart {
-    width: 100%;
-    padding: 12px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.product-card .add-to-cart:hover {
-    background: var(--primary-soft-dark);
-}
-
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1200px) {
   #trendingGrid {
@@ -1068,7 +955,10 @@ button {
   #productGrid,
   #dealsGrid,
   .hampers-grid {
-    gap: 25px;
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 20px;
   }
   
   .category-grid {
@@ -1107,14 +997,32 @@ button {
   }
 
   .section-header-with-link {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
   }
   
+  .section-header-with-link > div {
+    text-align: left;
+    flex: 1;
+  }
+  
   .view-all-link {
     align-self: center;
-    width: auto;
+    text-align: right;
+  }
+
+  .section,
+  .ramadan-hampers-section,
+  .newsletter,
+  .categories-showcase,
+  .features {
+    padding: 70px 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -1149,15 +1057,6 @@ button {
 
   .hamper-price {
     font-size: 1.2rem;
-  }
-  
-  .section,
-  .ramadan-hampers-section,
-  .newsletter,
-  .categories-showcase,
-  .features {
-    padding-top: 70px;
-    padding-bottom: 70px;
   }
   
   .category-grid {
